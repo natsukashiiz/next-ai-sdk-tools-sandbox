@@ -15,6 +15,7 @@
 import { Agent } from "@ai-sdk-tools/agents";
 import { openai } from "@ai-sdk/openai";
 import { memoryProvider } from "../memory-provider";
+import { getAllOrdersTool } from "../tools/get-all-orders-tool";
 
 const faqAgent = new Agent({
   name: "FAQ Specialist",
@@ -26,6 +27,9 @@ const orderAgent = new Agent({
   name: "Order Specialist",
   model: openai("gpt-4o"), // Good at handling order-related queries
   instructions: "Assist customers with order status and details.",
+  tools: {
+    getAllOrders: getAllOrdersTool,
+  },
 });
 
 const ticketAgent = new Agent({

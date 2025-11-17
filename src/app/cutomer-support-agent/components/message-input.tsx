@@ -24,7 +24,7 @@ export function MessageInput() {
   const [text, setText] = useState("");
   const { sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
-      api: "/api/chat",
+      api: "/api/cutomer-support-agent",
       prepareSendMessagesRequest({ messages, id }) {
         return {
           body: {

@@ -1,5 +1,12 @@
-import { redirect } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Home() {
-  redirect("/chat");
+  return (
+    <div className="h-screen flex items-center justify-center">
+      <Link href="/cutomer-support-agent">
+        <Button>Customer Support Agent</Button>
+      </Link>
+    </div>
+  );
 }
